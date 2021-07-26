@@ -44,22 +44,22 @@
   become_user: "{{ homebrew_user }}"
 
 # Adjust Homebrew permissions.
-- name: Ensure proper permissions and ownership on homebrew_brew_bin_path dirs.
-  file:
-    path: "{{ homebrew_brew_bin_path }}"
-    state: directory
-    owner: "{{ homebrew_user }}"
-    group: "{{ homebrew_group }}"
-    mode: 0775
-  become: true
-
-- name: Ensure proper ownership on homebrew_install_path subdirs.
-  file:
-    path: "{{ homebrew_install_path }}"
-    state: directory
-    owner: "{{ homebrew_user }}"
-    group: "{{ homebrew_group }}"
-  become: true
+#- name: Ensure proper permissions and ownership on homebrew_brew_bin_path dirs.
+#  file:
+#    path: "{{ homebrew_brew_bin_path }}"
+#    state: directory
+#    owner: "{{ homebrew_user }}"
+#    group: "{{ homebrew_group }}"
+#    mode: 0775
+#  become: true
+#
+#- name: Ensure proper ownership on homebrew_install_path subdirs.
+#  file:
+#    path: "{{ homebrew_install_path }}"
+#    state: directory
+#    owner: "{{ homebrew_user }}"
+#    group: "{{ homebrew_group }}"
+#  become: true
 
 # Place brew binary in proper location and complete setup.
 - name: Check if homebrew binary is already in place.
