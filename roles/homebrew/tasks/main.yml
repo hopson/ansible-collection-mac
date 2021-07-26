@@ -23,14 +23,14 @@
   become: true
   when: "ansible_distribution_version is version('10.13', '<')"
 
-- name: Ensure Homebrew directory exists.
-  file:
-    path: "{{ homebrew_install_path }}"
-    owner: "{{ homebrew_user }}"
-    group: "{{ homebrew_group }}"
-    state: directory
-    mode: 0775
-  become: true
+#- name: Ensure Homebrew directory exists.
+#  file:
+#    path: "{{ homebrew_install_path }}"
+#    owner: "{{ homebrew_user }}"
+#    group: "{{ homebrew_group }}"
+#    state: directory
+#    mode: 0755
+#  become: true
 
 # Clone Homebrew.
 - name: Ensure Homebrew is installed.
