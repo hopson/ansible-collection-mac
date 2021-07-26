@@ -75,14 +75,14 @@
   when: not homebrew_binary.stat.exists
   become: true
 
-- name: Ensure proper homebrew folders are in place.
-  file:
-    path: "{{ homebrew_prefix }}/{{ item }}"
-    state: directory
-    owner: "{{ homebrew_user }}"
-    group: "{{ homebrew_group }}"
-  become: true
-  loop: "{{ homebrew_folders_base + homebrew_folders_additional }}"
+#- name: Ensure proper homebrew folders are in place.
+#  file:
+#    path: "{{ homebrew_prefix }}/{{ item }}"
+#    state: directory
+#    owner: "{{ homebrew_user }}"
+#    group: "{{ homebrew_group }}"
+#  become: true
+#  loop: "{{ homebrew_folders_base + homebrew_folders_additional }}"
 
 - block:
     - name: Force update brew after installation.
